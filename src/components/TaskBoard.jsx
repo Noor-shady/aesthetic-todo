@@ -18,3 +18,13 @@ const TaskBoard = ({ onTaskComplete }) => {
 
     const newTasks = Array.from(tasks);
     
+    const todoList = newTasks.filter(t => t.status === 'todo');
+    const doneList = newTasks.filter(t => t.status === 'done');
+
+    // If reordering within the same list logic would go here
+    // For simplicity, I just handle the Status Change logic:
+    
+    if (source.droppableId === 'todo' && destination.droppableId === 'done') {
+      // Find the task and update it
+      const movedTaskIndex = newTasks.findIndex(t => t.id === result.draggableId);
+      newTasks[movedTaskIndex].status = 'done';
