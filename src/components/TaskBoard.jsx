@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import confetti from 'canvas-confetti';
-import { v4 as uuidv4 } from 'uuid'; // Generates unique IDs
+// Generates unique IDs
+import { v4 as uuidv4 } from 'uuid';
 import { Plus } from 'lucide-react';
 import TaskCard from './TaskCard';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -14,3 +15,6 @@ const TaskBoard = ({ onTaskComplete }) => {
     const { source, destination } = result;
 
     if (!destination) return;
+
+    const newTasks = Array.from(tasks);
+    
