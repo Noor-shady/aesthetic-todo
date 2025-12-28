@@ -6,3 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    // Automatically opens your browser when you run 'npm run dev'
+    open: true
+  }
+})
