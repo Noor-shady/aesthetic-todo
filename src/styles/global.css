@@ -107,3 +107,27 @@ body {
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
+
+.sticker-section {
+    max-height: 400px;
+    /* Scroll if too many stickers */
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  
+  .sticker-grid {
+    display: grid;
+    /* 3 Stickers per row */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .sticker-card {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
