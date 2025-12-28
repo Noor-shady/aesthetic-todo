@@ -42,6 +42,7 @@ const RewardModal = ({ isOpen, onClose, reward }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          // Close if clicking outside
           onClick={onClose}
         >
           <motion.div 
@@ -50,4 +51,24 @@ const RewardModal = ({ isOpen, onClose, reward }) => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: "spring", damping: 15 }}
-            onClick={(e) => e.stopPropagation()} 
+            onClick={(e) => e.stopPropagation()}
+          >
+            
+            {/* Close Button */}
+            <button className="close-btn" onClick={onClose}>
+              <X size={24} color="#586E75" />
+            </button>
+
+            {/* Content */}
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                <Sparkles size={40} color="#FFD700" fill="#FFD700" />
+              </div>
+
+              <h2 style={{ color: '#FFC0CB', fontSize: '2rem', margin: '0 0 10px 0' }}>
+                New Sticker!
+              </h2>
+              
+              <p style={{ color: '#7D7D7D', margin: '0 0 2rem 0' }}>
+                You've reached a <strong>{reward.threshold}-day streak!</strong>
+              </p>
