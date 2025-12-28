@@ -27,3 +27,7 @@
     /* Typography */
     --font-main: 'Quicksand', sans-serif;
   }
+
+/* Activated when <body data-theme="lavender"> */
+[data-theme='lavender'] {
+    --bg-color: #F3E5F5;
