@@ -31,3 +31,4 @@
 /* Activated when <body data-theme="lavender"> */
 [data-theme='lavender'] {
     --bg-color: #F3E5F5;
+    --accent-color: #CE93D8;
