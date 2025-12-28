@@ -72,3 +72,29 @@ const RewardModal = ({ isOpen, onClose, reward }) => {
               <p style={{ color: '#7D7D7D', margin: '0 0 2rem 0' }}>
                 You've reached a <strong>{reward.threshold}-day streak!</strong>
               </p>
+
+              <div className="reward-glow">
+                <img 
+                  src={reward.img} 
+                  alt={reward.label} 
+                  style={{ width: '120px', height: '120px', objectFit: 'contain' }} 
+                />
+              </div>
+
+              <h3 style={{ color: '#586E75', marginTop: '1.5rem' }}>
+                "{reward.label}"
+              </h3>
+              
+              <button className="collect-btn" onClick={onClose}>
+                Collect Reward
+              </button>
+            </div>
+
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default RewardModal;
