@@ -42,3 +42,8 @@
 /* Activated when <body data-theme="mint"> */
 [data-theme='mint'] {
     --bg-color: #E0F2F1;
+    /* Mint Green */
+    --accent-color: #80CBC4;
+    /* Teal */
+  --accent-dark: #4DB6AC;
+  --success-color: #A5D6A7;
