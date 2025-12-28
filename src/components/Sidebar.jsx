@@ -3,7 +3,7 @@ import { Trophy, Flame, Lock } from 'lucide-react';
 
 const Sidebar = ({ streak = 0, completedCount = 0 }) => {
   
-  // Paths assume your images are in: public/assets/stickers/
+  // Paths assume my images are in: public/assets/stickers/
   const stickers = [
     { id: 1, img: '/assets/stickers/note.png',          label: 'First Step',   threshold: 1 },
     { id: 2, img: '/assets/stickers/star.png',          label: 'Rising Star',  threshold: 3 },
@@ -39,3 +39,25 @@ const Sidebar = ({ streak = 0, completedCount = 0 }) => {
           </div>
         </div>
       </div>
+
+      <div className="sticker-section">
+        <h3 style={{ color: '#7D7D7D', marginBottom: '1rem', marginTop: '2rem' }}>Sticker Collection</h3>
+        
+        <div className="sticker-grid">
+          {stickers.map((sticker) => {
+            const isUnlocked = streak >= sticker.threshold;
+            
+            return (
+              <div 
+                key={sticker.id} 
+                className={`sticker-card ${isUnlocked ? 'unlocked' : 'locked'}`}
+                title={isUnlocked ? sticker.label : `Unlocks at ${sticker.threshold} days`}
+              >
+                <div className="sticker-icon">
+                  {isUnlocked ? (
+                    <img 
+                      src={sticker.img} 
+                      alt={sticker.label} 
+                      onError={(e) => {
+                        e.target.onerror = null; 
+                        e.target.style.display='none'; 
