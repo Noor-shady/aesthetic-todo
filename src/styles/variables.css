@@ -35,3 +35,6 @@
     /* Darker Orchid */
     --accent-dark: #BA68C8;
   --success-color: #D1C4E9;
+   /* Purple Glow */
+  --shadow-soft: 0 10px 30px rgba(206, 147, 216, 0.3);
+}
