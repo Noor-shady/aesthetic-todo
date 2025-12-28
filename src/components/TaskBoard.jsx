@@ -22,7 +22,7 @@ const TaskBoard = ({ onTaskComplete }) => {
     const doneList = newTasks.filter(t => t.status === 'done');
 
     // If reordering within the same list logic would go here
-    // For simplicity, I just handle the Status Change logic:
+    // For simplicity, I will just handle the Status Change logic:
     
     if (source.droppableId === 'todo' && destination.droppableId === 'done') {
       // Find the task and update it
@@ -65,3 +65,40 @@ const TaskBoard = ({ onTaskComplete }) => {
       spread: 70,
       origin: { y: 0.6 },
       colors: ['#FFC0CB', '#FFB6C1', '#C1E1C1', '#FFF']
+    });
+  };
+
+  return (
+    <div style={{ width: '100%', maxWidth: '800px' }}>
+      
+      {/* Input Section */}
+      <form onSubmit={addTask} style={{ marginBottom: '2rem', display: 'flex', gap: '10px' }}>
+        <input
+          type="text"
+          className="glass-panel"
+          placeholder="✨ Add a new focus..."
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          style={{
+            flex: 1,
+            padding: '16px',
+            border: 'none',
+            outline: 'none',
+            fontSize: '1rem',
+            color: '#586E75'
+          }}
+        />
+        <button 
+          type="submit" 
+          className="glass-panel"
+          style={{
+            padding: '0 20px',
+            cursor: 'pointer',
+            background: '#FFC0CB',
+            border: 'none',
+            color: 'white'
+          }}
+        >
+          <Plus size={24} />
+        </button>
+      </form>
