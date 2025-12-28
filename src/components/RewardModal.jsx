@@ -42,4 +42,12 @@ const RewardModal = ({ isOpen, onClose, reward }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={onClose} 
+          onClick={onClose}
+        >
+          <motion.div 
+            className="modal-content glass-panel"
+            initial={{ scale: 0.5, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", damping: 15 }}
+            onClick={(e) => e.stopPropagation()} 
