@@ -26,3 +26,23 @@ const useStreak = () => {
       else if (isYesterday(lastDate)) {
         newStreak = prev.streak + 1;
       } 
+      else {
+        newStreak = 1;
+      }
+
+      return {
+        streak: newStreak,
+        lastCompletionDate: today.toISOString(),
+        totalCompleted: prev.totalCompleted + 1
+      };
+    });
+  };
+
+  return {
+    streak: streakData.streak,
+    totalCompleted: streakData.totalCompleted,
+    incrementStreak
+  };
+};
+
+export default useStreak;
