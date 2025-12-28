@@ -61,3 +61,22 @@ const Sidebar = ({ streak = 0, completedCount = 0 }) => {
                       onError={(e) => {
                         e.target.onerror = null; 
                         e.target.style.display='none'; 
+                      }}
+                    />
+                  ) : (
+                    <Lock size={20} color="#CBD5E1" />
+                  )}
+                </div>
+                <span className="sticker-label">
+                  {isUnlocked ? sticker.label : `${sticker.threshold} Days`}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </aside>
+  );
+};
+
+export default Sidebar;
