@@ -102,3 +102,7 @@ const TaskBoard = ({ onTaskComplete }) => {
           <Plus size={24} />
         </button>
       </form>
+
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          
