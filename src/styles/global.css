@@ -70,3 +70,11 @@ body {
   }
   
   /* --- COMPONENT SPECIFIC STYLES --- */
+  .sidebar {
+    width: 300px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: fit-content;
+    flex-shrink: 0;
