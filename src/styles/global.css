@@ -131,3 +131,19 @@ body {
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
+    transition: all 0.3s ease;
+  position: relative;
+}
+
+.sticker-card.locked {
+  opacity: 0.6;
+  filter: grayscale(1);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.sticker-card.unlocked {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border: 1px solid var(--accent-color);
+}
