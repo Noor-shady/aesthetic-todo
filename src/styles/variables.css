@@ -38,3 +38,7 @@
    /* Purple Glow */
   --shadow-soft: 0 10px 30px rgba(206, 147, 216, 0.3);
 }
+
+/* Activated when <body data-theme="mint"> */
+[data-theme='mint'] {
+    --bg-color: #E0F2F1;
