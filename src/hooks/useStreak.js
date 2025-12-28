@@ -23,3 +23,6 @@ const useStreak = () => {
         // do nothing to streak, just pass the old one
         newStreak = prev.streak;
       } 
+      else if (isYesterday(lastDate)) {
+        newStreak = prev.streak + 1;
+      } 
