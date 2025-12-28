@@ -2,7 +2,7 @@ import useLocalStorage from './useLocalStorage';
 import { isSameDay, isYesterday, parseISO } from 'date-fns';
 
 const useStreak = () => {
-  // We store all streak data in one object in LocalStorage
+  // I will store all streak data in one object in LocalStorage
   const [streakData, setStreakData] = useLocalStorage('my-aesthetic-streak', {
     streak: 0,
     lastCompletionDate: null,
@@ -15,3 +15,7 @@ const useStreak = () => {
     setStreakData((prev) => {
       let newStreak = prev.streak;
       const lastDate = prev.lastCompletionDate ? parseISO(prev.lastCompletionDate) : null;
+
+      if (!lastDate) {
+        newStreak = 1;
+      } 
