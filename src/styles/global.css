@@ -42,3 +42,31 @@ body {
     margin-right: 0;
   }
 }
+
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Custom "Cute" Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    /* Pink scrollbar handle */
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-dark);
+  }
+  
+  /* --- COMPONENT SPECIFIC STYLES --- */
