@@ -19,3 +19,7 @@ const useStreak = () => {
       if (!lastDate) {
         newStreak = 1;
       } 
+      else if (isSameDay(today, lastDate)) {
+        // do nothing to streak, just pass the old one
+        newStreak = prev.streak;
+      } 
