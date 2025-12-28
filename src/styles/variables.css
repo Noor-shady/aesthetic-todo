@@ -6,5 +6,24 @@
     --card-bg: rgba(255, 255, 255, 0.8);
     
     /* Text Colors (Soft grays are easier on the eyes than black) */
-    --text-primary: #586E75;   /* Slate Gray */
+    /* Slate Gray */
+    --text-primary: #586E75;
     --text-secondary: #93A1A1;
+    
+    /* Classic Baby Pink */
+    --accent-color: #FFC0CB;
+    /* Darker pink for hover states */
+    --accent-dark: #FFB6C1;
+    /* Pastel Green (for completed tasks) */
+    --success-color: #C1E1C1;
+    
+    /* UI Visuals */
+    /* Very round, cute corners */
+    --border-radius: 24px;
+    /* Pinkish Glow */
+    --shadow-soft: 0 10px 30px rgba(255, 192, 203, 0.3);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.6);
+    
+    /* Typography */
+    --font-main: 'Quicksand', sans-serif;
+  }
