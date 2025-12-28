@@ -106,3 +106,51 @@ const TaskBoard = ({ onTaskComplete }) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
           
+          <div className="glass-panel" style={{ padding: '1rem', minHeight: '400px' }}>
+            <h3 style={{ margin: '0 0 1rem 0', color: '#FFB6C1', textAlign: 'center' }}>To Do</h3>
+            <Droppable droppableId="todo">
+              {(provided) => (
+                <div 
+                  ref={provided.innerRef} 
+                  {...provided.droppableProps} 
+                  style={{ minHeight: '300px' }}
+                >
+                  {tasks
+                    .filter(t => t.status === 'todo')
+                    .map((task, index) => (
+                      <TaskCard key={task.id} task={task} index={index} onDelete={deleteTask} />
+                    ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+
+          {/* DONE COLUMN */}
+          <div className="glass-panel" style={{ padding: '1rem', minHeight: '400px', background: 'rgba(255,255,255,0.4)' }}>
+            <h3 style={{ margin: '0 0 1rem 0', color: '#C1E1C1', textAlign: 'center' }}>Done</h3>
+            <Droppable droppableId="done">
+              {(provided) => (
+                <div 
+                  ref={provided.innerRef} 
+                  {...provided.droppableProps} 
+                  style={{ minHeight: '300px' }}
+                >
+                  {tasks
+                    .filter(t => t.status === 'done')
+                    .map((task, index) => (
+                      <TaskCard key={task.id} task={task} index={index} onDelete={deleteTask} />
+                    ))}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </div>
+
+        </div>
+      </DragDropContext>
+    </div>
+  );
+};
+
+export default TaskBoard;
