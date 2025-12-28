@@ -32,3 +32,6 @@
 [data-theme='lavender'] {
     --bg-color: #F3E5F5;
     --accent-color: #CE93D8;
+    /* Darker Orchid */
+    --accent-dark: #BA68C8;
+  --success-color: #D1C4E9;
