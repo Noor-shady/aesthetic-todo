@@ -2,3 +2,10 @@
     /* Very pale pink background */
     --bg-color: #FFF5F7;
     --sidebar-bg: #FFFFFF;
+    /* Semi-transparent white for cards */
+    --card-bg: rgba(255, 255, 255, 0.8);
+    
+    /* Text Colors (Soft grays are easier on the eyes than black) */
+    /* Slate Gray */
+    --text-primary: #586E75;
+    --text-secondary: #93A1A1;
