@@ -60,3 +60,7 @@ function App() {
             One task at a time. You've got this! ✨
           </p>
         </header>
+        
+        {/* I pass 'incrementStreak' so the board knows to update stats when a task is done */}
+        <TaskBoard onTaskComplete={incrementStreak} />
+      </div>
