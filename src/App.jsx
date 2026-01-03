@@ -41,3 +41,5 @@ function App() {
 
   return (
     <div className="app-container">
+      
+      <Sidebar streak={streak} completedCount={totalCompleted} />
