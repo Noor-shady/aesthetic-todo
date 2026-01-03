@@ -11,7 +11,7 @@ function App() {
   const [showReward, setShowReward] = useState(false);
   const [currentReward, setCurrentReward] = useState(null);
 
-  // I am gonna need this list here so i'd know WHICH sticker to show in the pop-up
+  // I need this list here so I know WHICH sticker to show in the pop-up
   const stickers = [
     { id: 1, img: '/assets/stickers/note.png',          label: 'First Step',   threshold: 1 },
     { id: 2, img: '/assets/stickers/star.png',          label: 'Rising Star',  threshold: 3 },
@@ -24,3 +24,20 @@ function App() {
     { id: 9, img: '/assets/stickers/moon.png',          label: 'Dreamer',      threshold: 45 },
     { id: 10, img: '/assets/stickers/love.png',         label: 'Forever',      threshold: 60 },
   ];
+
+  useEffect(() => {
+    // Find if the new streak matches a specific reward threshold
+    const newlyUnlocked = stickers.find(s => s.threshold === streak);
+    
+    // If I just hit a milestone, show the modal!
+    if (newlyUnlocked) {
+      // Small delay (500ms) so the user sees the number update first, then the pop-up
+      setTimeout(() => {
+        setCurrentReward(newlyUnlocked);
+        setShowReward(true);
+      }, 500);
+    }
+  }, [streak]);
+
+  return (
+    <div className="app-container">
