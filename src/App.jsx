@@ -43,3 +43,20 @@ function App() {
     <div className="app-container">
       
       <Sidebar streak={streak} completedCount={totalCompleted} />
+
+      <div style={{ flex: 1, maxWidth: '800px', width: '100%' }}>
+        
+        {/* Header */}
+        <header style={{ marginBottom: '2rem' }}>
+          <h1 style={{ 
+            color: 'var(--text-primary)', 
+            fontSize: '2.5rem', 
+            marginBottom: '0.5rem', 
+            fontWeight: '700' 
+          }}>
+            Focus & Flow
+          </h1>
+          <p style={{ color: 'var(--text-secondary)' }}>
+            One task at a time. You've got this! ✨
+          </p>
+        </header>
